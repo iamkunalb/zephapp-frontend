@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Zeph",
+    "slug": "zeph",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/zephlogo.png",
+    "scheme": "zeph",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.imknlb.zephapp",
+      "buildNumber": "9",
+      "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.imknlb.zeph"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "react-native-bottom-tabs",
+      ["@react-native-google-signin/google-signin"],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c2dd2e1f-9203-4dd4-8d3e-3febfddb0a29"
+      }
+    }
+  }
+}
