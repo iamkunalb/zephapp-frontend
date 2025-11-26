@@ -2,16 +2,16 @@ import BackButton from '@/components/BackButton'
 import Input from '@/components/Input'
 import { colors, spacingX, spacingY } from '@/constants/theme'
 import { auth } from '@/firebaseConfig'
-// import { GoogleSignin } from '@react-native-google-signin/google-signin'
+import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import { router } from 'expo-router'
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth'
 import * as Icons from "phosphor-react-native"
 import React, { useState } from 'react'
 import { ActivityIndicator, Alert, KeyboardAvoidingView, Platform, Pressable, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-// GoogleSignin.configure({
-//     webClientId: "630719331401-gh1hksrn9s8a8d8u2pedsurdsvpjqplt.apps.googleusercontent.com"
-// });
+GoogleSignin.configure({
+    webClientId: "630719331401-gh1hksrn9s8a8d8u2pedsurdsvpjqplt.apps.googleusercontent.com"
+});
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -94,12 +94,12 @@ const Login = () => {
 
     const handleGoogleLogin = async () => {
         try {
-            // await GoogleSignin.hasPlayServices();
-            // const response = await GoogleSignin.signIn();
-            // const idToken = response.data?.idToken;
+            await GoogleSignin.hasPlayServices();
+            const response = await GoogleSignin.signIn();
+            const idToken = response.data?.idToken;
       
-            // const googleCredential = GoogleAuthProvider.credential(idToken);
-            // await signInWithCredential(auth, googleCredential);
+            const googleCredential = GoogleAuthProvider.credential(idToken);
+            await signInWithCredential(auth, googleCredential);
         
             console.log("✅ Google Sign-In Successful");
         } catch (error) {
